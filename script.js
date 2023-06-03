@@ -1,11 +1,10 @@
 // complete the given function
 
-function palindrome(str){
-for (var i = 0; i < str.length / 2; i++) {
-    if (str[i] !== str[str.length - 1 - i]) {
-      return false;
-    }
+function palindrome(str) {
+  var a = str.replace(/[^\w\s]|_/g, "").toLowerCase().replace(/\s/g, "");
+  if (a === a.split("").reverse().join("")) {
+    return true;
   }
-  return true;
+  return false;
 }
 module.exports = palindrome
